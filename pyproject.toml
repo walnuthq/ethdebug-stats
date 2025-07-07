@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ethdebug-stats"
+version = "0.1.0"
+description = "Statistics tool for Ethdebug format debug information"
+readme = "README.md"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: System :: Monitoring",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["ethereum", "solidity", "ethdebug", "debug-info", "statistics", "compiler"]
+requires-python = ">=3.8"
+dependencies = [
+    # No external dependencies - uses only Python standard library
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "mypy>=0.990",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/ethdebug-stats"
+Documentation = "https://github.com/yourusername/ethdebug-stats#readme"
+Repository = "https://github.com/yourusername/ethdebug-stats.git"
+Issues = "https://github.com/yourusername/ethdebug-stats/issues"
+
+[project.scripts]
+ethdebug-stats = "ethdebug_stats.cli:main"
+
+[tool.setuptools]
+packages = ["ethdebug_stats"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+ethdebug_stats = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+]

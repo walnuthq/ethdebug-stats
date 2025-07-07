@@ -1,0 +1,8 @@
+# Core dependencies for ethdebug-stats
+# Currently no external dependencies - uses Python standard library only
+
+# Development dependencies (install with pip install -r requirements-dev.txt)
+# pytest>=7.0.0       # Testing
+# black>=22.0.0       # Code formatting
+# mypy>=0.990         # Type checking
+# ruff>=0.1.0         # Linting
